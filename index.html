@@ -164,18 +164,39 @@ body{
 }
 
 section{
-    padding:70px 7%;
+    padding:80px 7%;
+}
+
+.section-divider{
+    width:100%;
+    height:1px;
+    margin-bottom:70px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(212,175,55,0.45),
+        transparent
+    );
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:35px;
+    margin-bottom:40px;
 }
 
 .section-title h2{
     font-family:'Cinzel', serif;
-    font-size:2.5rem;
+    font-size:2.6rem;
     margin-bottom:12px;
+}
+
+.section-subtitle{
+    max-width:760px;
+    margin:18px auto 0 auto;
+    color:#d9d9d9;
+    line-height:1.8;
+    font-size:1.05rem;
 }
 
 .gold-line{
@@ -204,39 +225,64 @@ section{
 
 .episode-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:30px;
 }
 
 .episode-card{
     background:rgba(16,27,45,0.92);
-    padding:28px;
-    border-radius:25px;
-    text-align:center;
+    padding:32px;
+    border-radius:28px;
     transition:0.3s ease;
-    border:1px solid rgba(212,175,55,0.2);
+    border:1px solid rgba(212,175,55,0.18);
     backdrop-filter:blur(4px);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
 }
 
 .episode-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
     border-color:#d4af37;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.35),
+    0 0 25px rgba(212,175,55,0.12);
+}
+
+.episode-tag{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:7px 14px;
+    border-radius:50px;
+
+    background:rgba(212,175,55,0.12);
+    border:1px solid rgba(212,175,55,0.35);
+
+    color:#d4af37;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
 .episode-card h3{
-    color:#d4af37;
-    font-size:1.4rem;
+    color:#ffffff;
+    font-size:1.5rem;
     margin-bottom:18px;
+    line-height:1.4;
 }
 
 .episode-card p{
-    line-height:1.8;
-    margin-bottom:25px;
+    line-height:1.9;
+    margin-bottom:28px;
+    color:#d6d6d6;
 }
 
 .episode-btn{
     background:#d4af37;
     color:#07101d;
+    display:inline-block;
 }
 
 .scripture-container{
@@ -441,6 +487,8 @@ Watch Episodes
 
 <section class="welcome-section" id="about">
 
+<div class="section-divider"></div>
+
 <div class="section-title">
 
 <h2>About Joseph Bennett</h2>
@@ -465,11 +513,17 @@ Each episode focuses on Apostolic doctrine, the revelation of the name of Jesus,
 
 <section class="episodes-section" id="episodes">
 
+<div class="section-divider"></div>
+
 <div class="section-title">
 
-<h2>Featured Episodes</h2>
+<h2>Featured Podcast Episodes</h2>
 
 <div class="gold-line"></div>
+
+<p class="section-subtitle">
+Biblical answers to real questions about the Oneness of God, salvation, truth, and the revelation of Jesus Christ.
+</p>
 
 </div>
 
@@ -477,42 +531,120 @@ Each episode focuses on Apostolic doctrine, the revelation of the name of Jesus,
 
 <div class="episode-card">
 
-<h3>The Mighty God in Christ</h3>
+<div class="episode-tag">
+Doctrine
+</div>
+
+<h3>
+Is Jesus the Father?
+</h3>
 
 <p>
-Exploring the biblical revelation that Jesus Christ is God manifested in flesh according to Scripture.
+A biblical study answering one of the most asked questions about the Godhead and the identity of Jesus Christ.
 </p>
 
 <a href="#" class="episode-btn">
-Play Episode
+Listen Episode
 </a>
 
 </div>
 
 <div class="episode-card">
 
-<h3>The Name Above Every Name</h3>
+<div class="episode-tag">
+Bible Study
+</div>
+
+<h3>
+Why Was Jesus Baptized?
+</h3>
 
 <p>
-A study on the power, authority, and salvation found in the name of Jesus Christ.
+Understanding the purpose of Christ’s baptism and why the manifestation of God in flesh does not divide God into persons.
 </p>
 
 <a href="#" class="episode-btn">
-Play Episode
+Listen Episode
 </a>
 
 </div>
 
 <div class="episode-card">
 
-<h3>Hear O Israel</h3>
+<div class="episode-tag">
+Scripture
+</div>
+
+<h3>
+What Does “Son of God” Mean?
+</h3>
 
 <p>
-Understanding the oneness of God from Genesis through Revelation.
+Exploring the biblical meaning of the Sonship and how Scripture reveals one God manifested in flesh.
 </p>
 
 <a href="#" class="episode-btn">
-Play Episode
+Listen Episode
+</a>
+
+</div>
+
+<div class="episode-card">
+
+<div class="episode-tag">
+Apologetics
+</div>
+
+<h3>
+Does the Bible Teach the Trinity?
+</h3>
+
+<p>
+Examining verses commonly used for Trinitarian doctrine and comparing them with the full counsel of Scripture.
+</p>
+
+<a href="#" class="episode-btn">
+Listen Episode
+</a>
+
+</div>
+
+<div class="episode-card">
+
+<div class="episode-tag">
+Salvation
+</div>
+
+<h3>
+Why Baptize in Jesus’ Name?
+</h3>
+
+<p>
+A powerful look into apostolic baptism throughout the Book of Acts and the authority of the name of Jesus.
+</p>
+
+<a href="#" class="episode-btn">
+Listen Episode
+</a>
+
+</div>
+
+<div class="episode-card">
+
+<div class="episode-tag">
+Faith
+</div>
+
+<h3>
+Can God Truly Manifest in Flesh?
+</h3>
+
+<p>
+Discovering how the incarnation reveals the greatness, mercy, and saving power of the one true God.
+</p>
+
+<a href="#" class="episode-btn">
+Listen Episode
 </a>
 
 </div>
@@ -522,6 +654,8 @@ Play Episode
 </section>
 
 <section class="scripture-section" id="scriptures">
+
+<div class="section-divider"></div>
 
 <div class="section-title">
 
@@ -569,6 +703,8 @@ Play Episode
 
 <section class="listen-section">
 
+<div class="section-divider"></div>
+
 <div class="listen-box">
 
 <h2>Listen Everywhere</h2>
@@ -598,6 +734,8 @@ YouTube
 </section>
 
 <section class="contact-section" id="contact">
+
+<div class="section-divider"></div>
 
 <div class="section-title">
 
