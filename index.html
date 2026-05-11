@@ -31,46 +31,39 @@ body{
     color:white;
     font-family:'Open Sans', sans-serif;
     overflow-x:hidden;
+
+    background-image:
+    linear-gradient(
+    rgba(255,255,255,0.015),
+    rgba(255,255,255,0.015)
+    ),
+    url('F9B2C3E6-2B67-4527-92AC-1DF951E6134A.png');
+
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
 }
 
 .hero-header{
     position:relative;
-    min-height:85vh;
-    text-align:center;
     overflow:hidden;
-}
-
-.banner-image{
-    width:100%;
-    height:85vh;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-    filter:brightness(60%);
-    transform:scale(1.03);
-}
-
-.banner-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.15),
-        rgba(7,16,29,0.75)
-    );
-    z-index:1;
+    background:#07101d;
+    padding-bottom:40px;
 }
 
 .navbar{
-    position:absolute;
-    top:0;
-    left:0;
+    position:relative;
     width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px 6%;
-    z-index:5;
+    z-index:10;
+
+    background:rgba(4,10,20,0.92);
+    backdrop-filter:blur(6px);
+
+    border-bottom:1px solid rgba(212,175,55,0.15);
 }
 
 .nav-logo{
@@ -110,36 +103,32 @@ body{
 }
 
 .hero-content{
-    position:absolute;
-    top:47%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    position:relative;
     z-index:3;
-    width:90%;
-    max-width:850px;
-    backdrop-filter:blur(2px);
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+    text-align:center;
+    padding-top:45px;
+    padding-bottom:20px;
 }
 
-.main-logo{
-    width:170px;
-    border-radius:50%;
-    margin-bottom:20px;
-    border:4px solid #d4af37;
-    box-shadow:0 0 35px rgba(212,175,55,0.5);
-}
+.hero-banner{
+    width:100%;
+    max-width:1050px;
+    display:block;
+    margin:0 auto 35px auto;
+    border-radius:30px;
 
-.hero-content h1{
-    font-family:'Cinzel', serif;
-    font-size:4rem;
-    letter-spacing:2px;
-    margin-bottom:15px;
-    line-height:1.1;
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.45),
+    0 0 30px rgba(212,175,55,0.18);
 }
 
 .hero-text{
-    font-size:1.15rem;
-    line-height:1.8;
-    max-width:720px;
+    font-size:1.2rem;
+    line-height:1.9;
+    max-width:780px;
     margin:auto;
     color:#f1e5bb;
 }
@@ -209,7 +198,7 @@ section{
 }
 
 .content-card{
-    background:#101b2d;
+    background:rgba(16,27,45,0.92);
     padding:35px;
     border-radius:25px;
     max-width:900px;
@@ -217,6 +206,7 @@ section{
     line-height:1.9;
     font-size:1rem;
     box-shadow:0 0 30px rgba(0,0,0,0.25);
+    backdrop-filter:blur(4px);
 }
 
 .content-card p{
@@ -230,12 +220,13 @@ section{
 }
 
 .episode-card{
-    background:#101b2d;
+    background:rgba(16,27,45,0.92);
     padding:28px;
     border-radius:25px;
     text-align:center;
     transition:0.3s ease;
     border:1px solid rgba(212,175,55,0.2);
+    backdrop-filter:blur(4px);
 }
 
 .episode-card:hover{
@@ -266,11 +257,12 @@ section{
 }
 
 .scripture-box{
-    background:#101b2d;
+    background:rgba(16,27,45,0.92);
     padding:28px;
     border-radius:25px;
     text-align:center;
     border-left:5px solid #d4af37;
+    backdrop-filter:blur(4px);
 }
 
 .scripture-box h3{
@@ -287,11 +279,17 @@ section{
 }
 
 .listen-box{
-    background:linear-gradient(135deg, #101b2d, #17263f);
+    background:linear-gradient(
+        135deg,
+        rgba(16,27,45,0.95),
+        rgba(23,38,63,0.95)
+    );
+
     padding:50px 30px;
     border-radius:30px;
     max-width:850px;
     margin:auto;
+    backdrop-filter:blur(4px);
 }
 
 .listen-box h2{
@@ -322,10 +320,11 @@ section{
 }
 
 footer{
-    background:#040a14;
+    background:rgba(4,10,20,0.95);
     text-align:center;
     padding:50px 20px;
     border-top:1px solid rgba(212,175,55,0.2);
+    backdrop-filter:blur(4px);
 }
 
 .footer-logo{
@@ -357,16 +356,8 @@ footer p{
     gap:18px;
 }
 
-.hero-content h1{
-    font-size:3rem;
-}
-
 .hero-text{
     font-size:1rem;
-}
-
-.main-logo{
-    width:145px;
 }
 
 .section-title h2{
@@ -387,21 +378,12 @@ footer p{
     justify-content:center;
 }
 
-.hero-header{
-    min-height:78vh;
-}
-
-.banner-image{
-    height:78vh;
-}
-
 .hero-content{
-    top:50%;
+    padding-top:35px;
 }
 
-.hero-content h1{
-    font-size:2.1rem;
-    letter-spacing:1px;
+.hero-banner{
+    border-radius:20px;
 }
 
 .hero-buttons{
@@ -428,8 +410,11 @@ footer p{
 <nav class="navbar">
 
 <div class="nav-logo">
+
 <img src="ABAA9F5D-3E04-4228-B71A-C976DA1F072E.png" alt="Joseph Bennett One God Podcast Logo">
+
 <h2>One God Podcast</h2>
+
 </div>
 
 <ul class="nav-links">
@@ -441,23 +426,24 @@ footer p{
 
 </nav>
 
-<div class="banner-overlay"></div>
-
-<img src="F9B2C3E6-2B67-4527-92AC-1DF951E6134A.png" alt="One God Podcast Banner Image" class="banner-image">
-
 <div class="hero-content">
 
-<img src="ABAA9F5D-3E04-4228-B71A-C976DA1F072E.png" alt="Joseph Bennett Podcast Main Logo" class="main-logo">
-
-<h1>ONE GOD PODCAST</h1>
+<img src="F9B2C3E6-2B67-4527-92AC-1DF951E6134A.png" alt="One God Podcast Banner" class="hero-banner">
 
 <p class="hero-text">
 Biblical teaching and Apostolic truth proclaiming that Jesus Christ is the mighty God manifested in flesh.
 </p>
 
 <div class="hero-buttons">
-<a href="#" class="primary-btn">Listen Now</a>
-<a href="#" class="secondary-btn">Watch Episodes</a>
+
+<a href="#" class="primary-btn">
+Listen Now
+</a>
+
+<a href="#" class="secondary-btn">
+Watch Episodes
+</a>
+
 </div>
 
 </div>
@@ -467,8 +453,11 @@ Biblical teaching and Apostolic truth proclaiming that Jesus Christ is the might
 <section class="welcome-section" id="about">
 
 <div class="section-title">
+
 <h2>About Joseph Bennett</h2>
+
 <div class="gold-line"></div>
+
 </div>
 
 <div class="content-card">
@@ -488,8 +477,11 @@ Each episode focuses on Apostolic doctrine, the revelation of the name of Jesus,
 <section class="episodes-section" id="episodes">
 
 <div class="section-title">
+
 <h2>Featured Episodes</h2>
+
 <div class="gold-line"></div>
+
 </div>
 
 <div class="episode-grid">
@@ -502,7 +494,9 @@ Each episode focuses on Apostolic doctrine, the revelation of the name of Jesus,
 Exploring the biblical revelation that Jesus Christ is God manifested in flesh according to Scripture.
 </p>
 
-<a href="#" class="episode-btn">Play Episode</a>
+<a href="#" class="episode-btn">
+Play Episode
+</a>
 
 </div>
 
@@ -514,7 +508,9 @@ Exploring the biblical revelation that Jesus Christ is God manifested in flesh a
 A study on the power, authority, and salvation found in the name of Jesus Christ.
 </p>
 
-<a href="#" class="episode-btn">Play Episode</a>
+<a href="#" class="episode-btn">
+Play Episode
+</a>
 
 </div>
 
@@ -526,7 +522,9 @@ A study on the power, authority, and salvation found in the name of Jesus Christ
 Understanding the oneness of God from Genesis through Revelation.
 </p>
 
-<a href="#" class="episode-btn">Play Episode</a>
+<a href="#" class="episode-btn">
+Play Episode
+</a>
 
 </div>
 
@@ -537,31 +535,43 @@ Understanding the oneness of God from Genesis through Revelation.
 <section class="scripture-section" id="scriptures">
 
 <div class="section-title">
+
 <h2>Foundational Scriptures</h2>
+
 <div class="gold-line"></div>
+
 </div>
 
 <div class="scripture-container">
 
 <div class="scripture-box">
+
 <h3>Deuteronomy 6:4</h3>
+
 <p>
 “Hear, O Israel: The Lord our God is one Lord.”
 </p>
+
 </div>
 
 <div class="scripture-box">
+
 <h3>Isaiah 9:6</h3>
+
 <p>
 “His name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father.”
 </p>
+
 </div>
 
 <div class="scripture-box">
+
 <h3>Colossians 2:9</h3>
+
 <p>
 “For in him dwelleth all the fulness of the Godhead bodily.”
 </p>
+
 </div>
 
 </div>
@@ -579,9 +589,19 @@ Coming soon to Spotify, Apple Podcasts, YouTube, and more.
 </p>
 
 <div class="platform-buttons">
-<a href="#">Spotify</a>
-<a href="#">Apple Podcasts</a>
-<a href="#">YouTube</a>
+
+<a href="#">
+Spotify
+</a>
+
+<a href="#">
+Apple Podcasts
+</a>
+
+<a href="#">
+YouTube
+</a>
+
 </div>
 
 </div>
@@ -591,8 +611,11 @@ Coming soon to Spotify, Apple Podcasts, YouTube, and more.
 <section class="contact-section" id="contact">
 
 <div class="section-title">
+
 <h2>Contact</h2>
+
 <div class="gold-line"></div>
+
 </div>
 
 <div class="content-card">
