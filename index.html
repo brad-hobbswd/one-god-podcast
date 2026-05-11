@@ -345,25 +345,28 @@ section{
     position:relative;
 
     width:100%;
-    height:260px;
+    height:220px;
 
     overflow:hidden;
 
-    background:black;
+    background:#000;
+
+    cursor:pointer;
 }
 
 .episode-image img{
     width:100%;
     height:100%;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    transition:
-    filter 0.4s ease;
+    background:#000;
+
+    transition:0.3s ease;
 }
 
 .episode-card:hover .episode-image img{
-    filter:brightness(1.05);
+    transform:scale(1.01);
 }
 
 /* NOW PLAYING */
@@ -397,13 +400,13 @@ section{
 .sound-wave{
     position:absolute;
 
-    right:78px;
-    bottom:112px;
+    right:22px;
+    bottom:22px;
 
     display:flex;
     align-items:flex-end;
 
-    gap:12px;
+    gap:8px;
 
     z-index:5;
 }
@@ -454,12 +457,12 @@ section{
 
     transform:translate(-50%, -50%);
 
-    width:82px;
-    height:82px;
+    width:68px;
+    height:68px;
 
     border-radius:50%;
 
-    background:rgba(0,0,0,0.78);
+    background:rgba(7,16,29,0.82);
 
     border:2px solid rgba(212,175,55,0.65);
 
@@ -469,26 +472,26 @@ section{
 
     color:#d4af37;
 
-    font-size:2rem;
+    font-size:1.7rem;
 
     cursor:pointer;
 
     z-index:10;
 
-    transition:0.35s ease;
+    transition:0.3s ease;
 
-    backdrop-filter:blur(6px);
+    backdrop-filter:blur(5px);
 }
 
 .play-button:hover{
-    transform:translate(-50%, -50%) scale(1.08);
+    transform:translate(-50%, -50%) scale(1.06);
 
     background:#d4af37;
 
     color:#07101d;
 
     box-shadow:
-    0 0 25px rgba(212,175,55,0.6);
+    0 0 22px rgba(212,175,55,0.5);
 }
 
 audio{
