@@ -452,6 +452,10 @@ section{
     gap:6px;
 
     z-index:5;
+
+    opacity:0;
+
+    transition:0.3s ease;
 }
 
 .sound-wave span{
@@ -942,9 +946,6 @@ Is Jesus the Father?
 A biblical study answering one of the most asked questions about the Godhead and the identity of Jesus Christ.
 </p>
 
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
 
 </div>
 
@@ -994,10 +995,6 @@ Why Was Jesus Baptized?
 Understanding the purpose of Christ’s baptism and why the manifestation of God in flesh does not divide God into persons.
 </p>
 
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
-
 </div>
 
 </div>
@@ -1045,10 +1042,6 @@ What Does “Son of God” Mean?
 <p>
 Exploring the biblical meaning of the Sonship and how Scripture reveals one God manifested in flesh.
 </p>
-
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
 
 </div>
 
@@ -1098,10 +1091,6 @@ Does the Bible Teach the Trinity?
 Examining verses commonly used for Trinitarian doctrine and comparing them with the full counsel of Scripture.
 </p>
 
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
-
 </div>
 
 </div>
@@ -1150,10 +1139,6 @@ Why Baptize in Jesus’ Name?
 A powerful look into apostolic baptism throughout the Book of Acts and the authority of the name of Jesus.
 </p>
 
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
-
 </div>
 
 </div>
@@ -1201,10 +1186,6 @@ Can God Truly Manifest in Flesh?
 <p>
 Discovering how the incarnation reveals the greatness, mercy, and saving power of the one true God.
 </p>
-
-<a href="#" class="episode-btn">
-Listen Episode
-</a>
 
 </div>
 
@@ -1358,9 +1339,13 @@ function toggleAudio(audioId, element){
 
     const button = element.querySelector('.play-button');
 
+    const wave = element.querySelector('.sound-wave');
+
     const allAudios = document.querySelectorAll('audio');
 
     const allButtons = document.querySelectorAll('.play-button');
+
+    const allWaves = document.querySelectorAll('.sound-wave');
 
     allAudios.forEach(function(otherAudio){
 
@@ -1382,11 +1367,19 @@ function toggleAudio(audioId, element){
 
     });
 
+    allWaves.forEach(function(otherWave){
+
+        otherWave.style.opacity = '0';
+
+    });
+
     if(audio.paused){
 
         audio.play();
 
         button.innerHTML = '❚❚';
+
+        wave.style.opacity = '1';
 
     }else{
 
@@ -1394,11 +1387,15 @@ function toggleAudio(audioId, element){
 
         button.innerHTML = '▶';
 
+        wave.style.opacity = '0';
+
     }
 
     audio.onended = function(){
 
         button.innerHTML = '▶';
+
+        wave.style.opacity = '0';
 
     };
 
