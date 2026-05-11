@@ -446,6 +446,55 @@ section{
     animation-delay:0.6s;
 }
 
+.play-button{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    width:82px;
+    height:82px;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,0.78);
+
+    border:2px solid rgba(212,175,55,0.65);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d4af37;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:0.35s ease;
+
+    backdrop-filter:blur(6px);
+}
+
+.play-button:hover{
+    transform:translate(-50%, -50%) scale(1.08);
+
+    background:#d4af37;
+
+    color:#07101d;
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,0.6);
+}
+
+audio{
+    display:none;
+}
+
 @keyframes wave{
 
 0%{
@@ -853,19 +902,23 @@ Joseph’s approach to ministry flows through authentic teaching, relational con
 Biblical answers to real questions about the Oneness of God, salvation, truth, and the revelation of Jesus Christ.
 </p>
 
-</div>
+</<div class="episode-grid">
 
-<div class="episode-grid">
+<!-- EPISODE 1 -->
 
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast1', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="Is Jesus the Father Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -874,6 +927,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast1">
+<source src="podcast1.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -899,15 +956,21 @@ Listen Episode
 
 </div>
 
+<!-- EPISODE 2 -->
+
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast2', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="Why Was Jesus Baptized Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -916,6 +979,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast2">
+<source src="podcast2.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -941,15 +1008,21 @@ Listen Episode
 
 </div>
 
+<!-- EPISODE 3 -->
+
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast3', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="What Does Son of God Mean Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -958,6 +1031,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast3">
+<source src="podcast3.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -983,15 +1060,21 @@ Listen Episode
 
 </div>
 
+<!-- EPISODE 4 -->
+
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast4', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="Does the Bible Teach the Trinity Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -1000,6 +1083,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast4">
+<source src="podcast4.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -1025,15 +1112,21 @@ Listen Episode
 
 </div>
 
+<!-- EPISODE 5 -->
+
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast5', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="Why Baptize in Jesus Name Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -1042,6 +1135,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast5">
+<source src="podcast5.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -1067,15 +1164,21 @@ Listen Episode
 
 </div>
 
+<!-- EPISODE 6 -->
+
 <div class="episode-card">
 
-<div class="episode-image">
+<div class="episode-image" onclick="toggleAudio('podcast6', this)">
 
 <div class="now-playing">
 NOW PLAYING
 </div>
 
 <img src="audioclip.png" alt="Can God Manifest in Flesh Podcast Episode">
+
+<div class="play-button">
+▶
+</div>
 
 <div class="sound-wave">
 <span></span>
@@ -1084,6 +1187,10 @@ NOW PLAYING
 <span></span>
 <span></span>
 </div>
+
+<audio id="podcast6">
+<source src="podcast6.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
@@ -1249,6 +1356,60 @@ Facebook
 </div>
 
 </footer>
+<script>
 
+function toggleAudio(audioId, element){
+
+    const audio = document.getElementById(audioId);
+
+    const button = element.querySelector('.play-button');
+
+    const allAudios = document.querySelectorAll('audio');
+
+    const allButtons = document.querySelectorAll('.play-button');
+
+    allAudios.forEach(function(otherAudio){
+
+        if(otherAudio.id !== audioId){
+
+            otherAudio.pause();
+
+        }
+
+    });
+
+    allButtons.forEach(function(otherButton){
+
+        if(otherButton !== button){
+
+            otherButton.innerHTML = '▶';
+
+        }
+
+    });
+
+    if(audio.paused){
+
+        audio.play();
+
+        button.innerHTML = '❚❚';
+
+    }else{
+
+        audio.pause();
+
+        button.innerHTML = '▶';
+
+    }
+
+    audio.onended = function(){
+
+        button.innerHTML = '▶';
+
+    };
+
+}
+
+</script>
 </body>
 </html>
