@@ -1057,6 +1057,20 @@ body.locked{
     animation-delay:0.9s;
 }
 
+    .entering-text{
+    margin-top:28px;
+
+    color:rgba(212,175,55,0.8);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:0.72rem;
+
+    animation:pulseText 2s ease-in-out infinite;
+}
+
 @keyframes welcomeWave{
 
 0%{
@@ -1091,6 +1105,22 @@ body.locked{
 100%{
     transform:scale(1);
     opacity:0.6;
+}
+
+}
+    
+@keyframes pulseText{
+
+0%{
+    opacity:0.4;
+}
+
+50%{
+    opacity:1;
+}
+
+100%{
+    opacity:0.4;
 }
 
 }
@@ -1156,9 +1186,9 @@ body.locked{
     <div class="welcome-container">
 
         <img 
-        src="welcome-joseph-banner.png" 
-        alt="Welcome To One God Podcast"
-        class="welcome-image">
+src="welcome-experience.png" 
+alt="Enter The Experience"
+class="welcome-image">
 
         <div class="welcome-content">
 
@@ -1198,7 +1228,9 @@ body.locked{
                 <p class="playing-text">
                 Welcome Message Now Playing
                 </p>
-
+<p class="entering-text">
+Preparing Your Experience...
+</p>
             </div>
 
             <audio 
@@ -1824,7 +1856,9 @@ function toggleAudio(audioId, element){
 
     const wave = element.querySelector('.sound-wave');
 
-    const allAudios = document.querySelectorAll('audio');
+    const allAudios = document.querySelectorAll(
+'.episode-card audio'
+);
 
     const allButtons = document.querySelectorAll('.play-button');
 
