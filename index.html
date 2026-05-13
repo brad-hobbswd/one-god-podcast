@@ -815,11 +815,409 @@ section{
     margin-top:4px;
 }
 
+/* ========================================= */
+/* WELCOME OVERLAY */
+/* ========================================= */
+
+body.locked{
+    overflow:hidden;
+    height:100vh;
+}
+
+#welcomeOverlay{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(20,12,0,0.92),
+        rgba(0,0,0,0.98)
+    );
+
+    z-index:999999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px 20px;
+
+    transition:
+    opacity 1.6s ease,
+    visibility 1.6s ease;
+}
+
+#welcomeOverlay.hide-overlay{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.welcome-background-glow{
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,0.16),
+        transparent 70%
+    );
+
+    filter:blur(20px);
+
+    animation:pulseGlow 4s ease-in-out infinite;
+}
+
+.welcome-container{
+    position:relative;
+
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:40px;
+
+    align-items:center;
+
+    z-index:2;
+}
+
+.welcome-image{
+    width:100%;
+
+    border-radius:30px;
+
+    border:1px solid rgba(212,175,55,0.25);
+
+    box-shadow:
+    0 0 45px rgba(212,175,55,0.15),
+    0 25px 60px rgba(0,0,0,0.55);
+}
+
+.welcome-content{
+    text-align:center;
+}
+
+.welcome-logo{
+    width:95px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(212,175,55,0.45);
+
+    margin-bottom:28px;
+}
+
+.welcome-content h1{
+    font-family:'Cinzel', serif;
+
+    font-size:3.3rem;
+
+    line-height:1.2;
+
+    color:white;
+
+    margin-bottom:22px;
+
+    text-shadow:
+    0 0 20px rgba(212,175,55,0.18);
+}
+
+.welcome-line{
+    width:120px;
+    height:4px;
+
+    margin:0 auto 28px auto;
+
+    border-radius:50px;
+
+    background:#d4af37;
+}
+
+.welcome-scripture{
+    color:#f1df9a;
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+    max-width:520px;
+
+    margin:0 auto 24px auto;
+}
+
+.welcome-scripture span{
+    display:block;
+
+    margin-top:10px;
+
+    color:#d4af37;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+.welcome-message{
+    color:#d9d9d9;
+
+    line-height:1.9;
+
+    max-width:540px;
+
+    margin:0 auto 34px auto;
+
+    font-size:1rem;
+}
+
+.welcome-audio-visual{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.playing-text{
+    margin-top:20px;
+
+    color:#d4af37;
+
+    letter-spacing:2px;
+
+    font-size:0.82rem;
+
+    text-transform:uppercase;
+}
+
+.welcome-wave{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    gap:7px;
+
+    height:70px;
+}
+
+.welcome-wave span{
+    width:5px;
+
+    background:#d4af37;
+
+    border-radius:30px;
+
+    animation:welcomeWave 1s infinite ease-in-out;
+}
+
+.welcome-wave span:nth-child(1){
+    height:18px;
+    animation-delay:0s;
+}
+
+.welcome-wave span:nth-child(2){
+    height:38px;
+    animation-delay:0.15s;
+}
+
+.welcome-wave span:nth-child(3){
+    height:24px;
+    animation-delay:0.3s;
+}
+
+.welcome-wave span:nth-child(4){
+    height:52px;
+    animation-delay:0.45s;
+}
+
+.welcome-wave span:nth-child(5){
+    height:28px;
+    animation-delay:0.6s;
+}
+
+.welcome-wave span:nth-child(6){
+    height:44px;
+    animation-delay:0.75s;
+}
+
+.welcome-wave span:nth-child(7){
+    height:20px;
+    animation-delay:0.9s;
+}
+
+@keyframes welcomeWave{
+
+0%{
+    transform:scaleY(0.4);
+    opacity:0.45;
+}
+
+50%{
+    transform:scaleY(1.4);
+    opacity:1;
+}
+
+100%{
+    transform:scaleY(0.4);
+    opacity:0.45;
+}
+
+}
+
+@keyframes pulseGlow{
+
+0%{
+    transform:scale(1);
+    opacity:0.6;
+}
+
+50%{
+    transform:scale(1.08);
+    opacity:1;
+}
+
+100%{
+    transform:scale(1);
+    opacity:0.6;
+}
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+.welcome-container{
+    grid-template-columns:1fr;
+
+    max-width:700px;
+}
+
+.welcome-content h1{
+    font-size:2.4rem;
+}
+
+.welcome-image{
+    max-height:450px;
+    object-fit:cover;
+}
+
+}
+
+@media(max-width:600px){
+
+#welcomeOverlay{
+    padding:30px 18px;
+}
+
+.welcome-content h1{
+    font-size:2rem;
+}
+
+.welcome-scripture{
+    font-size:1rem;
+}
+
+.welcome-message{
+    font-size:0.95rem;
+}
+
+.welcome-logo{
+    width:78px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
+<!-- ========================================= -->
+<!-- WELCOME OVERLAY -->
+<!-- PLACE DIRECTLY UNDER <body> -->
+<!-- ========================================= -->
 
+<div id="welcomeOverlay">
+
+    <div class="welcome-background-glow"></div>
+
+    <div class="welcome-container">
+
+        <img 
+        src="welcome-joseph-banner.png" 
+        alt="Welcome To One God Podcast"
+        class="welcome-image">
+
+        <div class="welcome-content">
+
+            <img 
+            src="ABAA9F5D-3E04-4228-B71A-C976DA1F072E.png"
+            alt="One God Podcast Logo"
+            class="welcome-logo">
+
+            <h1>
+            Welcome To One God Podcast
+            </h1>
+
+            <div class="welcome-line"></div>
+
+            <p class="welcome-scripture">
+            “Hear, O Israel: The Lord our God is one Lord.”
+            <span>Deuteronomy 6:4</span>
+            </p>
+
+            <p class="welcome-message">
+            Thank you for visiting One God Podcast with Joseph Bennett.
+            Please enjoy this special welcome message before entering the experience.
+            </p>
+
+            <div class="welcome-audio-visual">
+
+                <div class="welcome-wave">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p class="playing-text">
+                Welcome Message Now Playing
+                </p>
+
+            </div>
+
+            <audio 
+            id="welcomeAudio"
+            autoplay
+            playsinline
+            preload="auto">
+
+                <source 
+                src="welcome-message.mp3" 
+                type="audio/mpeg">
+
+            </audio>
+
+        </div>
+
+    </div>
+
+</div>
 <header class="hero-header">
 
 <nav class="navbar">
@@ -1485,6 +1883,63 @@ function toggleAudio(audioId, element){
     };
 
 }
+
+</script>
+
+    <!-- ========================================= -->
+<!-- PLACE BEFORE </body> -->
+<!-- ========================================= -->
+
+<script>
+
+/* LOCK PAGE */
+
+document.body.classList.add('locked');
+
+const welcomeOverlay = document.getElementById('welcomeOverlay');
+
+const welcomeAudio = document.getElementById('welcomeAudio');
+
+/* FORCE AUDIO */
+
+window.addEventListener('load', function(){
+
+    const playPromise = welcomeAudio.play();
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(function(){
+
+            document.addEventListener('click', startWelcomeAudioOnce);
+
+        });
+
+    }
+
+});
+
+/* FALLBACK */
+
+function startWelcomeAudioOnce(){
+
+    welcomeAudio.play();
+
+    document.removeEventListener(
+        'click',
+        startWelcomeAudioOnce
+    );
+
+}
+
+/* REMOVE OVERLAY AFTER AUDIO */
+
+welcomeAudio.onended = function(){
+
+    welcomeOverlay.classList.add('hide-overlay');
+
+    document.body.classList.remove('locked');
+
+};
 
 </script>
 </body>
